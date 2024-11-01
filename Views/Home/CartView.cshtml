@@ -1,0 +1,133 @@
+﻿@model MVCEcommerce.Dto_s.CartViewModel
+
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<div class="container">
+    <h3 class="text-center text-primary">Your Cart</h3>
+
+    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Go Back</a>
+
+
+    
+    <form asp-action="SubmitOrder" method="post">
+
+        <div id="cart-items"></div>
+
+        <!-- Total de artículos y precio total -->
+        <div class="text-right mt-4">
+            <p>Total items: <span id="total-items">0</span></p>
+            <p>Total: $<span id="total-price">0.00</span></p>
+        </div>
+
+
+         <!-- Datos del Cliente -->
+        <div class="row">
+            <div class="col-lg-6" mx-auto 0>
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" type="email" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Address"></label>
+                    <input asp-for="Address" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber"></label>
+                    <input asp-for="PhoneNumber" type="tel" class="form-control" required />
+                </div>
+                <!-- Botón de envío -->
+                <button type="submit" class="btn btn-primary mt-3">Submit Order</button>
+            </div>
+        </div>
+
+      
+    </form>
+</div>
+
+<script>
+    // Cargar el carrito desde Local Storage
+    function loadCart() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItemsContainer = document.getElementById("cart-items");
+        cartItemsContainer.innerHTML = "";
+
+        let totalItems = 0;
+        let totalPrice = 0;
+
+        // Verificar si el carrito está vacío
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            document.getElementById("total-items").textContent = "0";
+            document.getElementById("total-price").textContent = "0.00";
+            return;
+        }
+
+        cart.forEach((item, index) => {
+            const subtotal = item.price * item.quantity;
+            totalItems += item.quantity;
+            totalPrice += subtotal;
+
+            // Crear elementos de entrada ocultos para cada producto
+            const inputId = `<input type="hidden" name="Items[${index}].Id" value="${item.id}" />`;
+            const inputName = `<input type="hidden" name="Items[${index}].Name" value="${item.name}" />`;
+            const inputPrice = `<input type="hidden" name="Items[${index}].Price" value="${item.price}" />`;
+            const inputQuantity = `<input type="hidden" name="Items[${index}].Quantity" value="${item.quantity}" />`;
+
+            // Contenedor para cada ítem
+            const itemDiv = document.createElement("div");
+            itemDiv.classList.add("cart-item", "border", "p-3", "mb-3");
+            itemDiv.innerHTML = `
+                    <h5>${item.name}</h5>
+                    <p>Price: $${item.price.toFixed(2)}</p>
+                    <p>Quantity: <span class="quantity">${item.quantity}</span></p>
+                    <p>Subtotal: $<span class="subtotal">${subtotal.toFixed(2)}</span></p>
+                    ${inputId} ${inputName} ${inputPrice} ${inputQuantity}
+                    <button class="btn btn-secondary btn-sm mt-2" onclick="updateQuantity('${item.id}', 1)">+1</button>
+                    <button class="btn btn-secondary btn-sm mt-2" onclick="updateQuantity('${item.id}', -1)">-1</button>
+                    <button class="btn btn-danger btn-sm mt-2" onclick="removeItem('${item.id}')">Remove</button>
+                `;
+
+            cartItemsContainer.appendChild(itemDiv);
+        });
+
+        // Actualizar el total de ítems y el precio total
+        document.getElementById("total-items").textContent = totalItems;
+        document.getElementById("total-price").textContent = totalPrice.toFixed(2);
+    }
+
+    // Actualizar la cantidad de un producto
+    function updateQuantity(productId, change) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const product = cart.find(item => item.id === productId);
+
+        if (product) {
+            product.quantity += change;
+
+            // Eliminar el producto si la cantidad es 0 o menor
+            if (product.quantity <= 0) {
+                removeItem(productId);
+            } else {
+                // Actualizar el carrito en el Local Storage
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart(); // Recargar el carrito
+            }
+        }
+    }
+
+    // Eliminar un producto del carrito
+    function removeItem(productId) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart = cart.filter(item => item.id !== productId); // Filtrar el producto que se quiere eliminar
+        localStorage.setItem("cart", JSON.stringify(cart));
+        loadCart(); // Recargar el carrito
+    }
+
+        // Cargar el carrito al iniciar la página
+        document.addEventListener("DOMContentLoaded", loadCart);
+</script>

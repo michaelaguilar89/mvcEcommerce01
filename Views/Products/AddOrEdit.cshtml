@@ -1,0 +1,59 @@
+﻿@model MVCEcommerce.Dto_s.ProductDto;
+@{
+    ViewData["Title"] = "AddOrEdit";
+}
+
+<div class="row">
+    <div class="col-lg-6 mx-auto 0">
+        <h3 class="@(Model.Id==0 ? "text-center text-primary":"text-center text-success")">@(Model.Id==0 ? "Create Product" : "Update Product")</h3>
+
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @ViewData["ErrorMessage"]
+            </div>
+        }
+       
+        
+        <form asp-action="AddOrEdit" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="Stock"></label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Category </label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories"></select>
+
+
+            </div>
+            <div class="form-group">
+                <label asp-for="File" class="control-label"></label>
+                <input class="form-control" asp-for="File" type="file" />
+            </div>
+            @if (Model.Id>0)
+            {
+                <input readonly="true" type="hidden" asp-for="PublicId" />
+                <input readonly="true" type="hidden" asp-for="Url" />
+                <div class="form-group">
+                    <label class="control-label" >Image : </label>
+                    <img src=@Model.Url width="100" height="100" alt="Name">
+                </div>
+            }
+            <div class="form-group text-center py-3">
+                <button class="@(Model.Id==0 ? "btn btn-primary" :"btn btn-success")"  >@(Model.Id==0 ? "Add Record" :"Update Record")</button>
+                <a class="btn btn-secondary" asp-action="Index">Go To Index</a>
+            </div>
+        </form>
+    </div>
+</div>

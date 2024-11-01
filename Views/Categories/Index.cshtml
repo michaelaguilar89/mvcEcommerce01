@@ -1,0 +1,51 @@
+﻿@model IEnumerable< MVCEcommerce.Dto_s.CategoryResultDto>;
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="row">
+    <div class="col-lg-10 mx-auto 0">
+        <h3 class="text-center text-primary">List Of Categories</h3>
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @ViewData["ErrorMessage"]
+            </div>
+
+            <div class="form-group text-center">
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+
+            </div>
+        }
+        <a asp-action="AddOrEdit" class="btn btn-primary">Add Category</a>
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+
+      <th scope="col">User</th>
+        <th scope="col">Actions</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+     @foreach (var item in Model)
+                {
+                   <tr>
+                      <th scope="row">@item.Title</th>
+                      <td>@item.Date</td>
+                      <td>@item.UserName</td>
+                      <td>
+                          <a asp-action="AddOrEdit" asp-route-id="@item.Id" class="btn btn-success">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                      </td>
+    </tr>  
+                }
+  
+  </tbody>
+</table>
+    </div>
+</div>

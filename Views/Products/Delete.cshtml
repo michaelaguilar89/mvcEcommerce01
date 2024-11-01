@@ -1,0 +1,44 @@
+﻿@model MVCEcommerce.Dto_s.ProductResultDto;
+
+<div class="row">
+    <div class="col-md-4 mx-auto 0">
+        <div class="card">
+            <h3 class="text-center text-danger">Confirm Delete Product?</h3>
+            @if (ViewData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @ViewData["ErrorMessage"]
+                </div>
+            }
+            @if (Model!=null)
+            {
+                <p>Name : @Model.Name</p>
+                <p>Price : @Model.Price </p>
+                <p>Stock : @Model.Stock</p>
+                <p>Date : @Model.CreationModificationDate</p>
+                <p>Category : @Model.CategoryName</p>
+                <p>User : @Model.UserName</p>
+                <p> Image : 
+                    <img  src="@Model.Url" width="100" height="100"/>
+                </p>
+                <div class="form-group text-center py-3">
+                    <form asp-action="DeleteConfirmed" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <button class="btn btn-danger">Yes</button>
+                        <a class="btn btn-secondary" asp-action="Index">Go Back</a>
+
+                    </form>
+                </div>
+            }
+            else
+            {
+                <div class="form-group text-center py-3">
+                     <a class="btn btn-secondary" asp-action="Index">Go Back</a>
+
+                   
+                </div>
+            }
+           
+        </div>
+    </div>
+</div>

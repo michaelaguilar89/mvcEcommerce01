@@ -1,0 +1,42 @@
+﻿@model MVCEcommerce.Dto_s.CategoryDto;
+@{
+    ViewData["Title"] = "AddOrEdit";
+}
+
+<div class="row">
+    <div class="col-lg-4 mx-auto 0">
+        <h2 class="@(Model.Id==0 ? "text-primary text-center" : "text-success text-center")" >@(Model.Id==0 ? "Add New Category" : "Edit Category")</h2>
+        
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">
+                @ViewData["ErrorMessage"]
+            </div>
+
+            <div class="form-group text-center">
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+
+            </div>
+        }
+        else
+        {
+            <form asp-action="AddOrEdit" onsubmit="AddOrEdit">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label class="control-label" asp-for="Title"></label>
+                    <input class="form-control" asp-for="Title" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center pt-3">
+                    <button type="submit" class="btn btn-primary ">Save</button>
+                    <button asp-action="Index" class="btn btn-secondary mx-3">Go Index</button>
+                </div>
+            </form>
+        }
+   
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
