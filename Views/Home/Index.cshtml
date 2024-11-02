@@ -5,12 +5,24 @@
 
 <div class="container">
     <div class="row">
+        <div class="col-lg-4 mx-auto 0">
+                 <button class="btn btn-link p-3" onclick="setLanguage('es')">Español</button>
+                 <button class="btn btn-link p-3" onclick="setLanguage('en')">English</button>
 
+        </div>
+     
+        <!-- Contenido de introducción -->
+        <div id="introduction-text">
+            <!-- Este contenido se llena mediante JavaScript -->
+        </div>
+        <a asp-action="Contact" class="my-3">Contact Via Email</a> 
+        <!-- Botones de cambio de idioma -->
+  
         <h3 class="text-center text-primary">List of Products (@Model.Count) </h3>
 
         <!-- Botón de Carrito -->
         <div class="text-center my-3">
-            <button id="cart-button" class="btn btn-warning" style="display: none;" onclick="goToCart()">
+            <button id="cart-button" class="btn btn-outline-success" style="display: none;" onclick="goToCart()">
                 Cart (<span id="cart-count">0</span>)
             </button>
         </div>
@@ -18,7 +30,7 @@
         <form method="get" asp-action="Index">
             <div class="form-group col-md-4 mx-auto 0">
                 <p class="text-center">
-                    <input type="text" name="searchQuery" value="@Model.searchQuery" class="form-control" placeholder="Search products..." />
+                    <input type="text" name="searchQuery" value="@Model.SearchQuery" class="form-control" placeholder="Search products..." />
                     <button type="submit" class="btn btn-primary my-3">Search</button> |
                     <a asp-action="Index" class="my-3">Back To Full list</a>
                 </p>
@@ -40,9 +52,39 @@
                 </div>
             </div>
         }
+
+        <div class="d-flex justify-content-between">
+            <div>
+                @if (Model.PageNumber > 1)
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber - 1)" asp-route-pageSize="@Model.PageSize" asp-route-searchQuery="@Model.SearchQuery" class="btn btn-secondary">Previous</a>
+
+                }
+
+            </div>
+
+            <div>
+                @if (Model.TotalProducts >= Model.PageSize)
+                {
+                    <a asp-action="Index" asp-route-pageNumber="@(Model.PageNumber + 1)" asp-route-pageSize="@Model.PageSize" asp-route-searchQuery="@Model.SearchQuery" class="btn btn-secondary">Next</a>
+
+                }
+
+
+            </div>
     </div>
 </div>
 
+<style>
+    /* Estilos para el botón flotante del carrito */
+    #cart-button {
+        position: fixed; /* Fijado en la pantalla */
+        bottom: 20px; /* Distancia desde el fondo de la pantalla */
+        right: 20px; /* Distancia desde el lado derecho de la pantalla */
+        z-index: 1000; /* Coloca el botón encima de otros elementos */
+        display: none; /* Oculto hasta que haya elementos en el carrito */
+    }
+</style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -92,6 +134,43 @@
             });
         });
     });
+
+
+     // Definir el contenido en ambos idiomas
+        const translations = {
+            es: {
+                title: "Bienvenidos a nuestra tienda en línea, una demostración diseñada para ofrecer una experiencia de compra intuitiva y completa.",
+                description: "Aquí puedes explorar una gama de productos organizados en categorías, facilitando la búsqueda y selección de lo que necesitas.",
+                features: "Esta demo permite administrar productos y categorías de manera eficiente, con funciones para agregar, editar y eliminar productos en tiempo real. Además, puedes disfrutar de una experiencia de compra dinámica, añadiendo productos a tu carrito y enviando tu pedido por WhatsApp o email de forma rápida y conveniente.",
+                contact: "Si estás buscando una tienda en línea profesional para tus productos y deseas ampliar tu alcance, no dudes en contactarme. Estoy aquí para ayudarte a hacer crecer tu negocio. ¡Explora, selecciona y descubre el futuro de tu tienda online!"
+            },
+            en: {
+                title: "Welcome to our online store, a demonstration designed to offer an intuitive and complete shopping experience.",
+                description: "Here you can explore a range of products organized into categories, making it easy to find and select what you need.",
+                features: "This demo allows efficient management of products and categories, with functions to add, edit, and delete products in real-time. You can also enjoy a dynamic shopping experience by adding products to your cart and sending your order via WhatsApp or email quickly and conveniently.",
+                contact: "If you're looking for a professional online store for your products and want to expand your reach, don't hesitate to contact me. I'm here to help grow your business. Explore, select, and discover the future of your online store!"
+            }
+        };
+
+        // Función para cambiar el idioma
+        function setLanguage(language) {
+            const text = translations[language];
+            document.getElementById("introduction-text").innerHTML = `
+                <h2 class="text-success">${text.title}</h2>
+                <p>${text.description}</p>
+                <p>${text.features}</p>
+                <p><strong>${text.contact}</strong>
+                       
+                </p>
+                 
+            `;
+        }
+
+        // Establecer el idioma predeterminado
+        document.addEventListener("DOMContentLoaded", () => {
+            setLanguage('es');
+        });
+
 
     // Redirigir a la vista CartView al hacer clic en el botón de carrito
     function goToCart() {

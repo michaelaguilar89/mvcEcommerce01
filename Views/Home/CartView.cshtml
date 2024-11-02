@@ -5,11 +5,9 @@
 }
 
 <div class="container">
-    <h3 class="text-center text-primary">Your Cart</h3>
+    <h3 class="text-center text-primary">Your Cart ( <span id="total-items">0</span> )</h3>
 
-    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Go Back</a>
-
-
+  
     
     <form asp-action="SubmitOrder" method="post">
 
@@ -24,7 +22,8 @@
 
          <!-- Datos del Cliente -->
         <div class="row">
-            <div class="col-lg-6" mx-auto 0>
+            <div class="col-lg-6 mx-auto 0">
+                <h2 class="text-center text-success">Contact Form</h2>
                 <div class="form-group">
                     <label asp-for="Name"></label>
                     <input asp-for="Name" class="form-control" required />
@@ -41,8 +40,24 @@
                     <label asp-for="PhoneNumber"></label>
                     <input asp-for="PhoneNumber" type="tel" class="form-control" required />
                 </div>
-                <!-- Botón de envío -->
-                <button type="submit" class="btn btn-primary mt-3">Submit Order</button>
+                <!-- Campo para número de WhatsApp -->
+                <div class="form-group">
+                    <label for="whatsappNumber">WhatsApp Number</label>
+                    <input type="tel" name="WhatsAppNumber" class="form-control" placeholder="+123456789" required />
+                </div>
+
+
+                <!-- Botones para envío -->
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary mt-3 p-2" formaction="@Url.Action("SubmitOrderEmail", "Home")">Send by Email</button>
+                    <button type="button" class="btn btn-success mt-3 p-2" onclick="sendWhatsApp()">Send by WhatsApp</button>
+                    <a asp-action="Index" asp-controller="Home" class="btn btn-secondary mt-3 p-2">Go Back</a>
+                    <button class="btn btn-danger mt-3 p-2" onclick="cleanCart()">Clear Cart</button>
+
+                </div>
+                
+
+
             </div>
         </div>
 
@@ -51,6 +66,55 @@
 </div>
 
 <script>
+
+    
+    // Función para enviar el pedido por WhatsApp
+    function sendWhatsApp() {
+        const whatsappNumber = document.querySelector("input[name='WhatsAppNumber']").value;
+        if (!whatsappNumber) {
+            alert("Please enter a WhatsApp number.");
+            return;
+        }
+
+        // Obtener los valores de los campos del formulario
+        const clientName = document.querySelector("input[name='Name']").value;
+        const email = document.querySelector("input[name='Email']").value;
+        const phoneNumber = document.querySelector("input[name='PhoneNumber']").value;
+        const address = document.querySelector("input[name='Address']").value;
+
+
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length === 0) {
+            alert("Your cart is empty.");
+            return;
+        }
+
+      
+        
+        // Crear el mensaje de WhatsApp
+        let message = "Online Shopping -- Order Details:\n\n";
+        message += `Client: ${clientName}\n`;
+        message += `Email: ${email}\n`;
+        message += `Phone Number: ${phoneNumber}\n`;
+        message += `Address: ${address}\n\n`;
+        message += "Order Items:\n";
+        
+        
+        cart.forEach(item => {
+            const subtotal = item.price * item.quantity;  // Calcular el subtotal aquí
+            message += `${item.name} - Quantity: ${item.quantity} - Price: $${item.price.toFixed(2)} - SubTotal: $${subtotal.toFixed(2)}\n`;
+        });
+        const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+        const totalIt3ms = cart.reduce((totalItms, item)=> totalItms + item.quantity,0);
+        message += `\nTotal Items: ${totalIt3ms}`;
+        
+        message += `\nTotal Price: $${totalPrice.toFixed(2)}`;
+       
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+    }
+
+
     // Cargar el carrito desde Local Storage
     function loadCart() {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -78,6 +142,7 @@
             const inputName = `<input type="hidden" name="Items[${index}].Name" value="${item.name}" />`;
             const inputPrice = `<input type="hidden" name="Items[${index}].Price" value="${item.price}" />`;
             const inputQuantity = `<input type="hidden" name="Items[${index}].Quantity" value="${item.quantity}" />`;
+            const inputSubTotal = `<input type="hidden" name="Items[${index}].SubTotal" value="${item.subtotal}" />`;
 
             // Contenedor para cada ítem
             const itemDiv = document.createElement("div");
@@ -126,6 +191,19 @@
         cart = cart.filter(item => item.id !== productId); // Filtrar el producto que se quiere eliminar
         localStorage.setItem("cart", JSON.stringify(cart));
         loadCart(); // Recargar el carrito
+    }
+
+    function cleanCart() {
+        // Vaciar el carrito en el localStorage
+        localStorage.removeItem("cart");
+
+        // Opcional: puedes verificar que se ha eliminado el carrito
+        if (!localStorage.getItem("cart")) {
+            alert("Carrito limpio.");
+        }
+
+        // Actualizar la vista para reflejar el carrito vacío
+        loadCart(); // Llamada a la función loadCart para recargar la interfaz con el carrito vacío
     }
 
         // Cargar el carrito al iniciar la página

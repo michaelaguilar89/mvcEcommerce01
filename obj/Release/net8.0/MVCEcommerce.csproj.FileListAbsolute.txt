@@ -295,3 +295,7 @@ C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\refint\MVCEcomm
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\MVCEcommerce.pdb
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\MVCEcommerce.genruntimeconfig.cache
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\ref\MVCEcommerce.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Release\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Release\net8.0\MailKit.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Release\net8.0\MimeKit.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\MVCEcommerce.sourcelink.json

@@ -12,7 +12,7 @@ namespace MVCEcommerce.Services
             _context = context;
         }
        
-        public async Task<List<ProductViewDto>> GetProductsWithPaginationAndSearch(string search)
+        public async Task<List<ProductViewDto>> GetProductsWithPaginationAndSearch(string search, int pageNumber, int pageSize)
         {
             try
             {
@@ -29,7 +29,9 @@ namespace MVCEcommerce.Services
                         CategoryId = m.CategoryId,
                         CategoryName = m.Category.Title,
                         Url = m.Url
-                    }).ToListAsync();
+                    }).Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                    .ToListAsync();
 
                 return products;
             }
@@ -39,7 +41,7 @@ namespace MVCEcommerce.Services
 
             }
         }
-        public async Task<List<ProductViewDto>> GetProductsWithPagination()
+        public async Task<List<ProductViewDto>> GetProductsWithPagination(int pageNumber, int pageSize)
         {
             try
             {
@@ -54,7 +56,9 @@ namespace MVCEcommerce.Services
                         CategoryId=m.CategoryId,
                         CategoryName=m.Category.Title,
                         Url= m.Url
-                    }).ToListAsync();
+                    }).Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize)
+                    .ToListAsync();
 
                 return products;
             }

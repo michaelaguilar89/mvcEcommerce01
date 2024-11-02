@@ -22,6 +22,11 @@ namespace MVCEcommerce.Dto_s
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
+        [Required]
+        [Phone]
+        [Display(Name = " Whatsapp Number")]
+        public string WhatsappNumber { get; set; }
+
         // Lista de Productos en el Carrito
         public List<CartItem> Items { get; set; } = new List<CartItem>();
     }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+vt1igf5WNc7eTXO6wCBCtPcrmFW5/k7O73EzWFiE3I=",
+  "Hash": "46hGUWQYA8eNEHqkzxQ37CL1MQAHv7i+QRy4hpGmd8Q=",
   "Source": "MVCEcommerce",
   "BasePath": "_content/MVCEcommerce",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\wwwroot\\js\\Cart.js",
+      "SourceId": "MVCEcommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\wwwroot\\",
+      "BasePath": "_content/MVCEcommerce",
+      "RelativePath": "js/Cart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Cart.js"
     },
     {
       "Identity": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\wwwroot\\js\\site.js",
