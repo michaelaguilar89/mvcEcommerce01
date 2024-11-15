@@ -253,6 +253,7 @@ C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runt
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runtimes\linux-mips64\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runtimes\linux-musl-arm\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runtimes\linux-musl-s390x\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runtimes\linux-musl-x64\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runtimes\linux-ppc64le\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\PubTmp\Out\runtimes\linux-s390x\native\libe_sqlite3.so

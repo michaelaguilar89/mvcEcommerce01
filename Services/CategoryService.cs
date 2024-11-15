@@ -116,7 +116,7 @@ namespace MVCEcommerce.Services
                 {
                     Id = dto.Id,
                     Title = dto.Title,
-                    Date = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc),
+                    Date = DateTime.Now,
                     UserId = secret
                 };
                 if (category.Id == 0)

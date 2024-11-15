@@ -269,8 +269,15 @@ C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\win\lib\
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\SQLitePCLRaw.core.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\libman.json
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\CloudinaryDotNet.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\dotenv.net.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Debug\net8.0\MVCEcommerce.sourcelink.json
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\MailKit.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\MimeKit.dll
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-arm\native\libe_sqlite3.so
@@ -279,6 +286,7 @@ C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-ar
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-mips64\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\linux-s390x\native\libe_sqlite3.so
@@ -292,10 +300,3 @@ C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\win-arm\
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
-C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\libman.json
-C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\CloudinaryDotNet.dll
-C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\dotenv.net.dll
-C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Debug\net8.0\MVCEcommerce.sourcelink.json
-C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
-C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\MailKit.dll
-C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Debug\net8.0\MimeKit.dll
