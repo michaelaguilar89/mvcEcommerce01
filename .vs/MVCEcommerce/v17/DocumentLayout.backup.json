@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\mvcecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:mvcecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\views\\products\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:views\\products\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\dto\u0027s\\productresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:dto\u0027s\\productresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\views\\products\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:views\\products\\addoredit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +39,57 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MVCEcommerce",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\MVCEcommerce.csproj",
-              "RelativeDocumentMoniker": "MVCEcommerce.csproj",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\MVCEcommerce.csproj",
-              "RelativeToolTip": "MVCEcommerce.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-15T04:49:35.68Z",
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\ProductService.cs",
+              "RelativeToolTip": "Services\\ProductService.cs",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAAwPcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T04:26:08.89Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductResultDto.cs",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Dto\u0027s\\ProductResultDto.cs",
+              "RelativeDocumentMoniker": "Dto\u0027s\\ProductResultDto.cs",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Dto\u0027s\\ProductResultDto.cs",
+              "RelativeToolTip": "Dto\u0027s\\ProductResultDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T04:25:19.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Dockerfile",
-              "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Dockerfile",
-              "RelativeToolTip": "Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-15T04:49:27.437Z",
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Products\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Products\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Products\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T04:24:27.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddOrEdit.cshtml",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Products\\AddOrEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\AddOrEdit.cshtml",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Products\\AddOrEdit.cshtml",
+              "RelativeToolTip": "Views\\Products\\AddOrEdit.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-09T04:22:21.312Z",
               "EditorCaption": ""
             }
           ]

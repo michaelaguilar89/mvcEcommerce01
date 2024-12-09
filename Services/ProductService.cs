@@ -66,6 +66,7 @@ namespace MVCEcommerce.Services
                 {
                     Id = c.Id,
                     Name = c.Name,
+                    Description=c.Description,
                     Price = c.Price,
                     Stock = c.Stock,
                     CreationModificationDate = c.CreationModificationDate,
@@ -100,6 +101,7 @@ namespace MVCEcommerce.Services
                 {
                     Id = c.Id,
                     Name = c.Name,
+                    Description = c.Description,
                     Price = c.Price,
                     Stock = c.Stock,
                     CreationModificationDate = c.CreationModificationDate,
@@ -132,6 +134,7 @@ namespace MVCEcommerce.Services
                 Product product = new Product();
                 product.Id = dto.Id;
                 product.Name = dto.Name;
+                product.Description = dto.Description;
                 product.Price = dto.Price;
                 product.Stock = dto.Stock;
                 product.CreationModificationDate = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc);
@@ -200,6 +203,7 @@ namespace MVCEcommerce.Services
                {
                    Id = c.Id,
                    Name = c.Name,
+                   Description = c.Description,
                    Price = c.Price,
                    Stock = c.Stock,
                    CreationModificationDate = c.CreationModificationDate,

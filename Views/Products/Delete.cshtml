@@ -1,7 +1,7 @@
 ﻿@model MVCEcommerce.Dto_s.ProductResultDto;
 
 <div class="row">
-    <div class="col-md-4 mx-auto 0">
+    <div class="col-md-6 mx-auto 0">
         <div class="card">
             <h3 class="text-center text-danger">Confirm Delete Product?</h3>
             @if (ViewData["ErrorMessage"] != null)
@@ -13,6 +13,7 @@
             @if (Model!=null)
             {
                 <p>Name : @Model.Name</p>
+                <p>Price  @Model.Description</p>
                 <p>Price : @Model.Price </p>
                 <p>Stock : @Model.Stock</p>
                 <p>Date : @Model.CreationModificationDate</p>
