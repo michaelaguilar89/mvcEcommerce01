@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\dto\u0027s\\productforupdatesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:dto\u0027s\\productforupdatesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,54 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\ProductService.cs",
-              "RelativeToolTip": "Services\\ProductService.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAD4v5YAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T20:23:13.969Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Controllers\\ProductsController.cs",
-              "ViewState": "AgIAAKQAAAAAAAAAAAAAAKQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T20:31:29.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductForUpdatesDto.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Dto\u0027s\\ProductForUpdatesDto.cs",
-              "RelativeDocumentMoniker": "Dto\u0027s\\ProductForUpdatesDto.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Dto\u0027s\\ProductForUpdatesDto.cs",
-              "RelativeToolTip": "Dto\u0027s\\ProductForUpdatesDto.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAxwBsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T20:24:51.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Products\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Views\\Products\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Products\\Edit.cshtml",
-              "RelativeToolTip": "Views\\Products\\Edit.cshtml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAAAFUAAABaAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwCsAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-02T19:20:01.281Z",
+              "WhenOpened": "2025-01-02T23:34:51.572Z",
               "EditorCaption": ""
             }
           ]
