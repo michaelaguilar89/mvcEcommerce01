@@ -25,8 +25,16 @@ namespace MVCEcommerce.Dto_s
         public string UserId { get; set; }
         public string UserName { get; set; }
 
-        public string? PublicId { get; set; }
-        public string? Url { get; set; }
+        public List<ImageDto> Images { get; set; }
 
+
+    }
+    public class ImageDto
+    {
+        public int Id { get; set; }
+        public string PublicId { get; set; }
+        public string Url { get; set; }
+
+        
     }
 }

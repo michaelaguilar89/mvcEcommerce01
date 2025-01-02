@@ -15,6 +15,7 @@ namespace MVCEcommerce.Services
             _context = context;
         }
 
+        
         public async Task<List<CategoryResultDto>> GetCategories()
         {
             try

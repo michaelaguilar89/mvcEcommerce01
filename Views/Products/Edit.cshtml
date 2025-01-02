@@ -1,0 +1,126 @@
+﻿@using MVCEcommerce.Dto_s
+@model MVCEcommerce.Dto_s.ProductForUpdatesDto
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+   
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto 0">
+            <h2 class="text-success text-center">Edit Product</h2>
+            @if (!string.IsNullOrEmpty(ViewBag.Error as string))
+            {
+                <div class="text-danger">ViewBag.Error as string</div>
+            }
+            <form action="Edit" method="post" enctype="multipart/form-data">
+                <input asp-for="Id" type="hidden" />
+                <div class="form-floating mb-3">
+                   
+                    <input asp-for="Name" class="form-control" name="Name"  placeholder="Name"/>
+                    <label asp-for="Name"></label>
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Description" class="form-control" name="Description" placeholder="Description" />
+                    <label asp-for="Description"></label>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input  asp-for="Price" class="form-control" name="Price" placeholder="Price" />
+                    <label asp-for="Price"></label>
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input  asp-for="Stock" class="form-control" name="Stock"/>
+                    <label asp-for="Stock"></label>
+                    <span asp-validation-for="Stock" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="CreationDate" class="form-control" name="CreationDate" placeholder="Date"  />
+                    <label asp-for="CreationDate"></label>
+                    <span asp-validation-for="CreationDate" class="text-danger"></span>
+                </div>
+               
+                       <div class="form-group">
+                    <h4 >Categories : </h4>
+                    @if (Model.Categories!=null)
+                    {
+                        @foreach (var item in Model.Categories)
+                        {
+                            <div class="form-check">
+                                <input class="form-check-input" asp-for="CategoryId" value="@item.Id"
+                                       type="radio" name="CategoryId" id="flexRadioDefault-@item.Id" checked="@item.IsSelected">
+
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    @item.Title
+                                </label>
+                            </div>
+                        }
+                        <p>Categories Count : @Model.Categories.Count.ToString()</p>
+                    }
+                    else{
+                        <p>Categories Not Found</p>
+                    }
+                </div>
+                <div class="form-group">
+                    <h4>Images : </h4>
+                    @if (Model.Images!=null && Model.Images.Count>0)
+                    {
+                        @foreach (var img in Model.Images)
+                        {
+                            <div class="row mb-3">
+                                <div class="col-4">
+                                    <img src="@img.Url" alt="@img.Id" style="max-width:100px; max-height:100px;" />
+                                    <!-- Hidden inputs to send image data -->
+                                    <input type="hidden" name="Images[@Model.Images.IndexOf(img)].Id" value="@img.Id" />
+                                    <input type="hidden" name="Images[@Model.Images.IndexOf(img)].PublicId" value="@img.PublicId" />
+                                    <input type="hidden" name="Images[@Model.Images.IndexOf(img)].Url" value="@img.Url" />
+                                   
+                                    
+                                   
+                                </div>
+                                <div class="col-8">
+                                    <div class="form-check">
+                                        <input asp-for="Images[@Model.Images.IndexOf(img)].Remove"
+                                               class="form-check-input"
+                                               id="flexCheckDefault-@img.Id" />
+                                        <label class="form-check-label" for="flexCheckDefault-@img.Id">
+                                            Remove this image?
+                                        </label>
+                                       
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                          
+                        }
+                    }else{
+                        <p>Images Not Found!</p>
+                    }
+               
+                </div>
+                <div class="form-group">
+                    <label asp-for="Files">Archivos</label>
+                    <input asp-for="Files" type="file" multiple class="form-control" />
+                    <span asp-validation-for="Files" class="text-danger"></span>
+                </div>
+
+
+
+
+                <div class="form-group mt-3 text-center">
+                    <button type="submit" class="btn btn-primary"> Save</button>
+                    <a asp-action="Index" class="btn btn-secondary"> Go To Index</a>
+                </div>
+            </form>
+           
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

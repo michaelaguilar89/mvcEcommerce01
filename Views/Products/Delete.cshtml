@@ -19,9 +19,14 @@
                 <p>Date : @Model.CreationModificationDate</p>
                 <p>Category : @Model.CategoryName</p>
                 <p>User : @Model.UserName</p>
-                <p> Image : 
-                    <img  src="@Model.Url" width="100" height="100"/>
-                </p>
+
+                <p> Images : 
+                    @foreach (var item in Model.Images)
+                    {
+                        <img src="@item.Url" width="100" height="100" />
+
+                    }
+                                   </p>
                 <div class="form-group text-center py-3">
                     <form asp-action="DeleteConfirmed" method="post">
                         <input type="hidden" asp-for="Id" />

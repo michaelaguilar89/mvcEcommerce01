@@ -300,3 +300,7 @@ C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Release\net8.0\MailKit.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Release\net8.0\MimeKit.dll
 C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\MVCEcommerce.sourcelink.json
 C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Release\net8.0\runtimes\linux-musl-s390x\native\libe_sqlite3.so
+C:\Users\T470\Documents\Projects\MVCEcommerce\bin\Release\net8.0\MVCEcommerce.staticwebassets.endpoints.json
+C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\staticwebassets.build.endpoints.json
+C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\staticwebassets\msbuild.MVCEcommerce.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\T470\Documents\Projects\MVCEcommerce\obj\Release\net8.0\staticwebassets.upToDateCheck.txt

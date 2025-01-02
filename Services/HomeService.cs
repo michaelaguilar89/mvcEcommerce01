@@ -19,6 +19,7 @@ namespace MVCEcommerce.Services
                
                 var products = await _context.Products
                     .Include(c => c.Category)
+                    .Include(c => c.Images)
                     .Where(c=>c.Name.ToLower().Contains( search.ToLower()))
                     .Select(m => new ProductViewDto
                     {
@@ -28,7 +29,11 @@ namespace MVCEcommerce.Services
                         Stock = m.Stock,
                         CategoryId = m.CategoryId,
                         CategoryName = m.Category.Title,
-                        Url = m.Url
+                        Images = m.Images.Select(s => new ImageDto
+                         {
+                             Id = s.Id,
+                             Url = s.Url
+                         }).ToList()
                     }).Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                     .ToListAsync();
@@ -46,16 +51,22 @@ namespace MVCEcommerce.Services
             try
             {
                 var products = await _context.Products
-                    .Include(c=>c.Category)
-                    .Select(m=> new ProductViewDto
+                    .Include(c => c.Category)
+                    .Include(c => c.Images)
+                    .Select(m => new ProductViewDto
                     {
                         Id = m.Id,
                         Name = m.Name,
-                        Price= m.Price,
-                        Stock=m.Stock,
-                        CategoryId=m.CategoryId,
-                        CategoryName=m.Category.Title,
-                        Url= m.Url
+                        Price = m.Price,
+                        Stock = m.Stock,
+                        CategoryId = m.CategoryId,
+                        CategoryName = m.Category.Title,
+                        Images =m.Images.Select( s=> new ImageDto
+                        {
+                            Id=s.Id,
+                            Url= s.Url
+                        }).ToList()
+       
                     }).Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                     .ToListAsync();

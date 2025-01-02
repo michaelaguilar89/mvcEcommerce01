@@ -22,10 +22,8 @@ namespace MVCEcommerce.Models
         public int CategoryId { get; set; }
         [Required]
         public string UserId { get; set; }
-        [Required]
-        public string PublicId { get; set; }
-        [Required]
-        public string Url { get; set; }
+      
+        public List<image> Images {get;set;}
 
         [ForeignKey("UserId")]
         public IdentityUser User { get; set; }

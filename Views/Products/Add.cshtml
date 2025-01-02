@@ -1,0 +1,98 @@
+﻿@using MVCEcommerce.Dto_s
+@model MVCEcommerce.Dto_s.ProductDto;
+@{
+    ViewData["Title"] = "Add";
+ 
+
+    var isFirstOrSelected = true; 
+
+
+    var Error = ViewBag.Error;
+}
+
+<div class="row">
+    <div class="col-lg-6 mx-auto 0">
+        <h3 class="text-primary text-center">Create Product</h3>
+
+        @if (Error != null)
+        {
+            <div class="alert alert-danger text-center">
+                @Error
+            </div>
+        }
+       
+        
+        <form asp-action="Add" enctype="multipart/form-data">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" asp-for="Stock"></label>
+                <input asp-for="Stock" class="form-control" />
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>Categoría</label>
+                <div>
+                    @if (Model.Categories != null)
+                    {
+                        foreach (var item in Model.Categories)
+                        {
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" asp-for="CategoryId" value=@item.Id type="radio" name="CategoryId"
+                                  checked="item.IsSelected"      id="flexRadioDefault-@item.Id"  >
+                               
+
+                                <label class="form-check-label" for="flexRadioDefault-@item.Id">
+                                    @item.Title
+                                </label>
+                            </div>
+                           
+                            
+                        }   
+                            
+                        
+                        
+                        <p>Categories Count : @Model.Categories.Count.ToString()</p>
+                    }else{
+                        <p>Categories not Found!</p>
+                    }
+                   
+                      
+                    
+                   
+                </div>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Files">Archivos</label>
+                <input asp-for="Files" type="file" multiple class="form-control" />
+                <span asp-validation-for="Files" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group text-center py-3">
+                <button class="btn btn-primary"  >Add Record</button>
+                <a class="btn btn-secondary" asp-action="Index">Go To Index</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

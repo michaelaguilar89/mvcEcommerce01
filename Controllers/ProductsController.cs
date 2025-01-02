@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.JSInterop.Infrastructure;
@@ -12,6 +13,7 @@ using MVCEcommerce.Data;
 using MVCEcommerce.Dto_s;
 using MVCEcommerce.Models;
 using MVCEcommerce.Services;
+using System.Reflection;
 
 namespace MVCEcommerce.Controllers
 {
@@ -24,13 +26,15 @@ namespace MVCEcommerce.Controllers
         private int _pageSize = 5;
         public int totalProducts = 0;
         private readonly UserManager<IdentityUser> _userManager;
+        private readonly ILogger<ProductsController> _logger;
         public ProductsController(ProductService product,
             UserManager<IdentityUser> userManager,
-            CategoryService category)
+            CategoryService category, ILogger<ProductsController> logger)
         {
             _product = product;
             _category = category;
-            
+            _logger = logger;
+
             _userManager = userManager;
         }
         // Método para obtener el UserId
@@ -70,62 +74,195 @@ namespace MVCEcommerce.Controllers
             return View(viewModel);
         }
 
-        public async Task<IActionResult> AddOrEdit(int? id)
+        
+        [HttpGet]
+        public async Task<IActionResult> Edit(int? id)
         {
-            //get categories form database
-            var categories = await _category.GetCategories();
-
-            if (id==null ||id==0)
+            ProductForUpdatesDto dto = new ProductForUpdatesDto();
+            try
             {
-                // return categorie's view
-                ViewBag.Categories = new SelectList(categories, "Id", "Title");
-                return View(new ProductDto());
+                
+                if (id!=null || id>0)
+                {
+                   
+                    var item = await _product.getProductById(id);
+                    dto.Id=item.Id;
+                    dto.Name = item.Name;
+                    dto.Description = item.Description;
+                    dto.Price=item.Price;
+                    dto.Stock=item.Stock;
+                    dto.CreationDate = item.CreationModificationDate;
+                    dto.CategoryId=item.CategoryId;
+                    Console.WriteLine("Id : " + dto.Id);
+                    Console.WriteLine("Name : " + dto.Name);
+                    Console.WriteLine("Price : " + dto.Price);
+                    Console.WriteLine("Stock : " + dto.Stock);
+                    Console.WriteLine("Category Id : " + dto.CategoryId);
+                    Console.WriteLine("Date : " + dto.CreationDate);
+                    var categories = await _category.GetCategories();
+                    dto.Categories = new List<CategoriesDto>();
+                    foreach (var i in categories)
+                    {
+                        CategoriesDto categoryDto = new CategoriesDto();
+                        categoryDto.Id = i.Id;
+                        categoryDto.Title = i.Title;
+                        
+                        dto.Categories.Add(categoryDto);
+                    }
+                    dto.Images = new List<ImageForUpdateDto>() ;
+                    foreach (var e in item.Images)
+                    {
+                        ImageForUpdateDto img = new ImageForUpdateDto();
+                        img.Id= e.Id;
+                        img.PublicId=e.PublicId;
+                        img.Url=e.Url;
+                        img.Remove = false;
+                        dto.Images.Add(img);
+                    }
+                    dto.Files = new List<IFormFile> ();
+                    if (dto.Images != null)
+                    {
+                        Console.WriteLine("Images -Count: " + dto.Images.Count);
+                        foreach (var e in dto.Images)
+                        {
+                            Console.WriteLine(" Id : " + e.Id + " ,Url : " + e.Url + " PublicId : " + e.PublicId + " , Remove : " + e.Remove);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Images is null!");
+                    }
+                    return View(dto);
+                }
+                ViewBag.Error = "Product Not Found!";
+                return View(dto);
+            }
+            catch (Exception e)
+            {
+                ViewBag.Error = "Error : " + e.Message;
+                return View(dto);
+                
+            }
+            
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(ProductForUpdatesDto dto)
+        {
+            Console.WriteLine("Id : "+dto.Id);
+            Console.WriteLine("Name : " + dto.Name);
+            Console.WriteLine("Price : " + dto.Price);
+            Console.WriteLine("Stock : " + dto.Stock);
+            Console.WriteLine("Category Id : " + dto.CategoryId);
+            Console.WriteLine("Date : " + dto.CreationDate);
+            
+            if (dto.Images!=null)
+            {
+                Console.WriteLine("Images -Count: " + dto.Images.Count);
+                foreach (var e in dto.Images)
+                {
+                    Console.WriteLine(" Id : " + e.Id + " ,Url : " + e.Url + " PublicId : " + e.PublicId+" , Remove : "+e.Remove);
+                }
             }
             else
             {
-                var exist = await _product.getProductById(id);
-                if (exist!=null)
-                {
-                    ProductDto dto = new ProductDto();
-                    dto.Id=exist.Id;
-                    dto.Name=exist.Name;
-                    dto.Price=exist.Price;
-                    dto.Stock=exist.Stock;
-                    dto.CategoryId=exist.CategoryId;
-                    dto.Url=exist.Url;
-                    dto.PublicId = exist.PublicId;
-
-                    // return categorie's view
-                    ViewBag.Categories = new SelectList(categories, "Id", "Title", dto.CategoryId);
-                    return View(dto);
-                }
-                ViewBag.ErrorMessage = "Error : Product not Found!";
-                //return View();
+                Console.WriteLine("Images is null!");
             }
 
-            return View(new ProductDto());
+            if (dto.Files!=null )
+            {
+                Console.WriteLine("Files - Count : " + dto.Files.Count);
+
+            }
+            else
+            {
+                Console.WriteLine("Files is null!");
+            }
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("Models is Invalid");
+            }
+            var secret = GetCurrentUserId();
+
+            var state = await _product.Edit(dto, secret);
+            if (state.Equals("1"))
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.Error = state;
+           
+            return View(dto);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+            //get categories form database
+            var categories = await _category.GetCategories();
+            Console.WriteLine(  "Categories from controller : ");
+            foreach (var item in categories)
+            {
+                Console.WriteLine( "Id : "+item.Id+ " , name : "+item.Title);
+            }
+            int counter = 0;
+           
+            ProductDto dto = new ProductDto();
+            dto.Categories = new List<CategoriesDto>();
+
+            foreach (var item in categories)
+            {
+                CategoriesDto categoryDto = new CategoriesDto();
+                categoryDto.Id=item.Id;
+                categoryDto.Title = item.Title;
+                
+                
+                if (counter==0)
+                {
+                    categoryDto.IsSelected = true;
+                    counter++;
+                }
+               
+                dto.Categories.Add(categoryDto);
+
+            }
+                return View(dto);
+          
+           
+        }
+
+         
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit(ProductDto dto)
+        public async Task<IActionResult> Add(ProductDto dto)
         {
-            if (ModelState.IsValid)
-            {
-                var secret = GetCurrentUserId();
-                var state=await _product.AddOrEdit(dto,secret);
-                if (state=="1" || state=="2")
-                {
-                    return RedirectToAction("Index");
 
-                }
+            Console.WriteLine( "data , Id : "+dto.Id+" ,Name :"+dto.Name+" ,Description : "
+                +dto.Description+" , Price : "+dto.Stock+" , Categorie-Id : "+dto.CategoryId+" ,Images -Count : "+dto.Files.Count);
+            if (!ModelState.IsValid)
+            {
                 //get categories form database
                 var categories = await _category.GetCategories();
                 // return categorie's view
-                ViewBag.Categories = new SelectList(categories, "Id", "Title");
-                ViewBag.ErrorMessage = state;
+                // Registrar error específico
+              //  _logger.LogWarning("Product operation returned a state: {State}", state);
+
+                ViewBag.Categories = categories;
+                
                 return View(dto);
             }
+
+
+            var secret = GetCurrentUserId();
+            var state = await _product.Add(dto, secret);
+            if (state == "1")
+            {
+                return RedirectToAction("Index");
+
+            }
+            //get categories form database
+            var categories2 = await _category.GetCategories();
+            ViewBag.Categories = categories2;
+            ViewBag.Error = state;
             return View(dto);
         }
 

@@ -21,10 +21,17 @@ namespace MVCEcommerce.Dto_s
 
         [Required]
         public int CategoryId { get; set; }
-        public IFormFile? File { get; set; }
-        public string? PublicId { get; set; }
-        public string? Url {  get; set; }
+        public List<IFormFile>? Files { get; set; }
        
+        public List<CategoriesDto>? Categories { get; set; }
+       
+    }
 
+
+    public class CategoriesDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public bool IsSelected { get; set; } = false; // Para indicar si está seleccionada
     }
 }
