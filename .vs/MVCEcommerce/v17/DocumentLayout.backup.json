@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\mvcecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:mvcecommerce.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,14 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAIwCsAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-02T23:34:51.572Z",
+              "Title": "MVCEcommerce",
+              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\MVCEcommerce.csproj",
+              "RelativeDocumentMoniker": "MVCEcommerce.csproj",
+              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\MVCEcommerce.csproj",
+              "RelativeToolTip": "MVCEcommerce.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-29T00:48:56.818Z",
               "EditorCaption": ""
             }
           ]
