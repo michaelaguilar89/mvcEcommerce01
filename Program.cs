@@ -9,6 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
 // Add services to the container.
 
+
+// Configurar logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole(); // Para ver logs en la consola
+builder.Logging.AddDebug();   // Para depuración
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("CloudConnection")));
 
@@ -50,4 +55,15 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
-app.Run();
+try
+{
+    app.Run();
+}
+catch (Exception ex)
+{
+    var logger = app.Services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "Error crítico en la aplicación");
+
+    // Asegurar que la aplicación no termine silenciosamente
+    throw;
+}

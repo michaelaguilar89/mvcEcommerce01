@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:services\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|c:\\users\\t470\\documents\\projects\\mvcecommerce\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF442FB1-86CF-4FF1-A263-93CFA6050D25}|MVCEcommerce.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Migrations\\20250129223440_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250129223440_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,66 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "Services\\ProductService.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\ProductService.cs",
-              "RelativeToolTip": "Services\\ProductService.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAAAG4AAAB+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T22:29:14.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\CategoryService.cs",
-              "RelativeDocumentMoniker": "Services\\CategoryService.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Services\\CategoryService.cs*",
-              "RelativeToolTip": "Services\\CategoryService.cs*",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAAAHcAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T22:37:42.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-29T22:37:10.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAwEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T22:37:04.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "20250129223440_initial.cs",
-              "DocumentMoniker": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Migrations\\20250129223440_initial.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250129223440_initial.cs",
-              "ToolTip": "C:\\Users\\T470\\Documents\\Projects\\MVCEcommerce\\Migrations\\20250129223440_initial.cs",
-              "RelativeToolTip": "Migrations\\20250129223440_initial.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-29T22:34:40.794Z",
+              "WhenOpened": "2025-01-29T23:03:40.94Z",
               "EditorCaption": ""
             }
           ]
