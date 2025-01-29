@@ -14,8 +14,10 @@ builder.Configuration.AddEnvironmentVariables();
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole(); // Para ver logs en la consola
 builder.Logging.AddDebug();   // Para depuración
+var connectionString = builder.Configuration.GetConnectionString("CloudConnection")
+    ?? builder.Configuration["CloudConnection"];
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("CloudConnection")));
+    options.UseNpgsql(connectionString));
 
 // for posgresql   options.UseNpgsql(connectionString)
 //for sqllite
