@@ -108,7 +108,7 @@ namespace MVCEcommerce.Services
                     product.Description=dto.Description;
                     product.Price = dto.Price;
                     product.Stock = dto.Stock;
-                    product.CreationModificationDate = dto.CreationDate;
+                    product.CreationModificationDate = DateTime.SpecifyKind(product.CreationModificationDate, DateTimeKind.Utc);
                     product.CategoryId = dto.CategoryId;
                     product.UserId = secret;
                     //update information in database
