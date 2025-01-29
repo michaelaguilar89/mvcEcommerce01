@@ -8,9 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 //read EnvironmentVariables
 builder.Configuration.AddEnvironmentVariables();
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("CloudConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseNpgsql(connectionString));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("CloudConnection")));
 
 // for posgresql   options.UseNpgsql(connectionString)
 //for sqllite
