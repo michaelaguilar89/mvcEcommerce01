@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MVCEcommerce")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac361c33fe96aacac1d9f3330a1ed384c116bcbd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d52d96392b93facbfa14e4c0963b1f64ac17972b")]
 [assembly: System.Reflection.AssemblyProductAttribute("MVCEcommerce")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MVCEcommerce")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

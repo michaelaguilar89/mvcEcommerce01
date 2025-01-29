@@ -5,11 +5,12 @@ using MVCEcommerce.Data;
 using MVCEcommerce.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//read EnvironmentVariables
+builder.Configuration.AddEnvironmentVariables();
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("CloudConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=ecommercemvc.db"));
+    options.UseNpgsql(connectionString));
 
 // for posgresql   options.UseNpgsql(connectionString)
 //for sqllite
